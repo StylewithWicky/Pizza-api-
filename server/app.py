@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from _init_ import app
 
 # Local imports
 from .config import Config
@@ -23,4 +24,5 @@ def create_app():
     # Register all routes via blueprint registration function
     register_routes(app)
 
-    return app
+if __name__=='__main__':
+    app.run(debug=True)
